@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Equipment Sign-Out</title>
+  <style>
+    body { display: flex; font-family: sans-serif; padding: 10px; }
+    #main { flex: 3; }
+    #sidebar { flex: 1; margin-left: 20px; border-left: 1px solid #ccc; padding-left: 20px; }
+    .tool-btn { margin: 5px; padding: 8px; min-width: 140px; }
+    .redtag { background-color: red; color: white; }
+    .signed { background-color: lightgreen; }
+    .category { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h2>Student Sign-Out</h2>
+    <input id="studentName" placeholder="Enter name or ID" />
+    <div id="categoryArea"></div>
+    <h3>Admin Login</h3>
+    <input id="adminPass" type="password" placeholder="Admin password" />
+    <div id="adminControls" style="display:none; margin-top:10px;">
+      <h4>Categories</h4>
+      <input id="newCat" placeholder="Category name" />
+      <button onclick="addCategory()">Add Category</button>
+      <input id="rmCat" placeholder="Remove name" />
+      <button onclick="removeCategory()">Remove Category</button>
+      <h4>Tools</h4>
+      <input id="newToolId" maxlength="7" placeholder="Tool ID (max7)" />
+      <input id="newToolModel" placeholder="Model description" />
+      <select id="toolCategory"></select>
+      <button onclick="addTool()">Add Tool</button>
+      <input id="removeToolId" placeholder="Tool ID to remove" />
+      <button onclick="removeTool()">Remove Tool</button>
+      <button onclick="clearAll()">Clear All Signups</button>
+    </div>
+  </div>
+  <div id="sidebar">
+    <h3>Sign-Out Log</h3>
+    <ul id="signoutLog"></ul>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
